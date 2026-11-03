@@ -1,0 +1,57 @@
+name: Idempotent Multi-Registry Release & Deploy Guard Pattern
+
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: "Release tag (e.g. v1.2.0)"
+        required: true
+        type: string
+
+jobs:
+  idempotent-release-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Reliable FFmpeg Installation for E2E Screen Recording
+        run: |
+          sudo apt-get update && sudo apt-get install -y --no-install-recommends ffmpeg
+
+      - name: Idempotent npm Package Publish Guard
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          PKG_NAME=$(node -p "require('./package.json').name")
+          PKG_VER=$(node -p "require('./package.json').version")
+          if npm view "${PKG_NAME}@${PKG_VER}" version > /dev/null 2>&1; then
+            echo "${PKG_NAME}@${PKG_VER} is already published on npm; skipping."
+          else
+            npm publish --access public
+          fi
+
+      - name: Idempotent OpenVSX & VSCode Marketplace Publish Guard
+        env:
+          OVSX_PAT: ${{ secrets.OPEN_VSX_TOKEN }}
+          VSCE_PAT: ${{ secrets.VSCE_TOKEN }}
+        run: |
+          OUT=$(npx ovsx publish extension.vsix -p "$OVSX_PAT" 2>&1) || {
+            echo "$OUT"
+            if echo "$OUT" | grep -qi "already exists"; then
+              echo "Version already exists on OpenVSX; skipping cleanly."
+            else
+              exit 1
+            fi
+          }
+
+      - name: Idempotent GitHub Release Creation Guard
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          TAG="${{ inputs.release_tag }}"
+          if gh release view "$TAG" > /dev/null 2>&1; then
+            gh release upload "$TAG" dist/* --clobber
+          else
+            gh release create "$TAG" dist/* --title "$TAG" --generate-notes
+          fi

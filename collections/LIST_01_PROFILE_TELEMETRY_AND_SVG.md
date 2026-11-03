@@ -1,0 +1,12 @@
+# 📚 القائمة الكبرى الأولى: منظومة أتمتة بروفايل GitHub والبطاقات الحية (Profile Live Telemetry & SVG Suite)
+
+> تجمع هذه القائمة كافة الأكواد والـ Gists المسؤولة عن مزامنة إحصائيات البروفايل الحية، توليد بطاقات الـ SVG ذاتياً بثيم Midnight Galaxy، وتحريك شبكة المساهمات.
+
+## 🗂️ قائمة الـ Gists المندرجة تحت هذه المهمة الكبرى
+
+| # | عنوان الـ Gist (SEO Title) والوظيفة | ملف الكود المنقى | دليل الاستخدام المستقل |
+| :-: | :--- | :---: | :---: |
+| **#01** | **GitHub Profile README Live Stats, Streak & Contribution Counter Auto-Sync (Python GraphQL & REST)**<br/>_مزامنة إحصائيات بروفايل GitHub الحية (إجمالي المساهمات الفعلية عبر GraphQL، أطول سلسلة أيام متتالية Streak، النجوم، المستودعات العامة، والمتابعين) وتحديث ملف README.md تلقائياً بدون أي مكتبات خارجية._ | [`github_profile_live_metrics_sync.py`](../gists/01_profile_live_metrics_sync/github_profile_live_metrics_sync.py) | [`الشرح بالعربية`](../gists/01_profile_live_metrics_sync/00_01_profile_live_metrics_sync_GUIDE_AR.md) |
+| **#02** | **Generate Custom GitHub Streak & Achievements Trophy SVG Cards Locally (Midnight Galaxy Theme - Python)**<br/>_توليد بطاقات SVG الإحصائية (`streak-stats.svg` و `trophies.svg`) محلياً داخل المستودع بألوان ثيم `Midnight Galaxy` الموحدة دون الاعتماد على خوادم الطرف الثالث البطيئة أو المتوقفة._ | [`github_custom_svg_cards_generator.py`](../gists/02_custom_svg_cards_generator/github_custom_svg_cards_generator.py) | [`الشرح بالعربية`](../gists/02_custom_svg_cards_generator/00_02_custom_svg_cards_generator_GUIDE_AR.md) |
+| **#03** | **GitHub Actions Workflow: Auto-Update Profile README Stats & SVG Cards Every Hour (Cron Schedule)**<br/>_ملف أتمتة GitHub Actions جاهز يعمل تلقائياً على مدار الساعة (`0 * * * *`) لتشغيل سكربت المزامنة وتوليد البطاقات ورفع التحديثات إلى المستودع دون أي تدخل يدوي._ | [`github_profile_hourly_sync_workflow.yml`](../gists/03_profile_hourly_sync_workflow/github_profile_hourly_sync_workflow.yml) | [`الشرح بالعربية`](../gists/03_profile_hourly_sync_workflow/00_03_profile_hourly_sync_workflow_GUIDE_AR.md) |
+| **#04** | **GitHub Actions Workflow: Generate Dark & Light Contribution Grid Snake Animation SVG (Platane/snk)**<br/>_توليد رسم الثعبان المتحرك على شبكة المساهمات الخضراء (Contribution Grid Snake) للوضعين الليلي والنهاري تلقائياً كل 6 ساعات ونشره في فرع `output`._ | [`github_contribution_snake_grid_workflow.yml`](../gists/04_contribution_snake_grid_workflow/github_contribution_snake_grid_workflow.yml) | [`الشرح بالعربية`](../gists/04_contribution_snake_grid_workflow/00_04_contribution_snake_grid_workflow_GUIDE_AR.md) |
