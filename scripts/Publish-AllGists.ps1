@@ -1,7 +1,7 @@
 <#
 .SYNOPSIS
-    Publishes all 10 sanitized Gist bundles and the 3 Master Collection Index Gists
-    to https://gist.github.com/1stANUNNAKI after verifying OAuth 'gist' scope.
+    Publishes all 10 sanitized Gist bundles, the 3 Master Collection Index Gists,
+    and the Master Catalog Gist to https://gist.github.com/1stANUNNAKI.
 #>
 $ErrorActionPreference = "Stop"
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
@@ -83,7 +83,7 @@ if ($NeedGistScope) {
             $p.StandardInput.Write($approveStr)
             $p.StandardInput.Close()
             $p.WaitForExit(5000) | Out-Null
-            Write-Host "Token upgraded with 'gist' scope!"
+            Write-Host "[OK] Token upgraded with 'gist' scope and saved to Git Credential Manager!"
             break
         }
     }
@@ -102,15 +102,19 @@ $Published = @()
 foreach ($item in $Manifest) {
     $folder = "$RepoRoot\gists\$($item.folder)"
     $codeContent = [System.IO.File]::ReadAllText("$folder\$($item.filename)", [System.Text.Encoding]::UTF8)
-    $guideContent = [System.IO.File]::ReadAllText("$folder\$($item.guide_filename)", [System.Text.Encoding]::UTF8)
+    $enGuide = [System.IO.File]::ReadAllText("$folder\$($item.en_guide_filename)", [System.Text.Encoding]::UTF8)
+    $arGuide = [System.IO.File]::ReadAllText("$folder\$($item.guide_filename)", [System.Text.Encoding]::UTF8)
+
+    $filesMap = @{
+        $item.en_guide_filename = @{ content = $enGuide }
+        $item.filename          = @{ content = $codeContent }
+        $item.guide_filename    = @{ content = $arGuide }
+    }
 
     $body = @{
         description = $item.seo_title
         public      = $true
-        files       = @{
-            $item.guide_filename = @{ content = $guideContent }
-            $item.filename       = @{ content = $codeContent }
-        }
+        files       = $filesMap
     } | ConvertTo-Json -Depth 6
 
     $res = Invoke-RestMethod -Method "POST" -Uri "https://api.github.com/gists" -Headers $Headers -ContentType "application/json; charset=utf-8" -Body ([System.Text.Encoding]::UTF8.GetBytes($body))
@@ -122,25 +126,72 @@ foreach ($item in $Manifest) {
         filename   = $item.filename
         url        = $res.html_url
     }
-    Start-Sleep -Seconds 2
+    Start-Sleep -Seconds 1
+}
+
+# Publish 3 Collection List Gists + 1 Master Catalog Gist
+$collections = $Published | Group-Object -Property collection
+$collectionUrls = @()
+
+foreach ($grp in $collections) {
+    $colName = $grp.Name
+    $lines = @(
+        "# $colName",
+        "",
+        "| # | SEO Gist Title | Direct Gist Link | Primary File |",
+        "| :-: | :--- | :---: | :--- |"
+    )
+    foreach ($p in $grp.Group) {
+        $lines += "| #$($p.id) | **$($p.title)** | [Open Gist]($($p.url)) | ``$($p.filename)`` |"
+    }
+    $colFile = "00_" + ($colName -replace "[^A-Za-z0-9]+", "_").Trim("_") + ".md"
+    $colBody = @{
+        description = "[Curated Gist Collection] $colName"
+        public      = $true
+        files       = @{
+            $colFile = @{ content = ($lines -join "`n") }
+        }
+    } | ConvertTo-Json -Depth 6
+    $colRes = Invoke-RestMethod -Method "POST" -Uri "https://api.github.com/gists" -Headers $Headers -ContentType "application/json; charset=utf-8" -Body ([System.Text.Encoding]::UTF8.GetBytes($colBody))
+    Write-Host "[PUBLISHED COLLECTION LIST] $($colRes.html_url) -> $colName"
+    $collectionUrls += [PSCustomObject]@{
+        name = $colName
+        url  = $colRes.html_url
+    }
+    Start-Sleep -Seconds 1
 }
 
 # Publish Master Catalog List Gist
-$ indexLines = @(
-    "# 📚 Master GitHub Automation & Profile Engineering Gist Catalog",
+$indexLines = @(
+    "# Master GitHub Automation & Profile Engineering Gist Catalog",
     "",
-    "| # | Collection | Gist Title | Direct Link | File |",
-    "| :-: | :--- | :--- | :---: | :--- |"
+    "## Curated Task Collections (Lists)",
+    ""
 )
+foreach ($c in $collectionUrls) {
+    $indexLines += "- **$($c.name):** $($c.url)"
+}
+$indexLines += ""
+$indexLines += "## All 10 Sanitized, SEO-Optimized Gists"
+$indexLines += ""
+$indexLines += "| # | Collection | Gist Title | Direct Link | File |"
+$indexLines += "| :-: | :--- | :--- | :---: | :--- |"
 foreach ($p in $Published) {
     $indexLines += "| #$($p.id) | $($p.collection) | **$($p.title)** | [Open Gist]($($p.url)) | ``$($p.filename)`` |"
 }
 $masterBody = @{
-    description = "[Master Gist List] Curated GitHub Profile Telemetry, GraphQL GPG PR Automation & Security Suite"
+    description = "[Master Gist Catalog] Curated GitHub Profile Telemetry, GraphQL GPG PR Automation & Security Suite (10 Gists / 3 Lists)"
     public      = $true
     files       = @{
         "00_MASTER_GIST_LIST.md" = @{ content = ($indexLines -join "`n") }
     }
 } | ConvertTo-Json -Depth 6
 $masterRes = Invoke-RestMethod -Method "POST" -Uri "https://api.github.com/gists" -Headers $Headers -ContentType "application/json; charset=utf-8" -Body ([System.Text.Encoding]::UTF8.GetBytes($masterBody))
-Write-Host "`n[MASTER LIST GIST PUBLISHED] $($masterRes.html_url)"
+Write-Host "[MASTER LIST GIST PUBLISHED] $($masterRes.html_url)"
+
+$resultJson = @{
+    master_catalog_url = $masterRes.html_url
+    collections        = $collectionUrls
+    gists              = $Published
+} | ConvertTo-Json -Depth 6
+[System.IO.File]::WriteAllText("$RepoRoot\gists\published_gists_urls.json", $resultJson, [System.Text.Encoding]::UTF8)

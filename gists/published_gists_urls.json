@@ -1,0 +1,89 @@
+﻿{
+    "collections":  [
+                        {
+                            "name":  "List 01: GitHub Profile Live Telemetry \u0026 Dynamic SVG Suite",
+                            "url":  "https://gist.github.com/1stANUNNAKI/92f026f01535f414e4cfb76cd0720c01"
+                        },
+                        {
+                            "name":  "List 02: GitHub Pull Request \u0026 Achievements Automation Suite",
+                            "url":  "https://gist.github.com/1stANUNNAKI/d1ffe609069f8df2c2494a6596859cb6"
+                        },
+                        {
+                            "name":  "List 03: Open-Source Community Repo Scanner \u0026 Secret Guard Suite",
+                            "url":  "https://gist.github.com/1stANUNNAKI/07da8d4b142b6dba5c52bdff10a63930"
+                        }
+                    ],
+    "master_catalog_url":  "https://gist.github.com/1stANUNNAKI/b1b31e4a7f0a089ed7927620dedbdea5",
+    "gists":  [
+                  {
+                      "id":  "01",
+                      "collection":  "List 01: GitHub Profile Live Telemetry \u0026 Dynamic SVG Suite",
+                      "title":  "GitHub Profile README Live Stats, Streak \u0026 Contribution Counter Auto-Sync (Python GraphQL \u0026 REST)",
+                      "filename":  "github_profile_live_metrics_sync.py",
+                      "url":  "https://gist.github.com/1stANUNNAKI/4780a35129ec55227e736bba715e3f73"
+                  },
+                  {
+                      "id":  "02",
+                      "collection":  "List 01: GitHub Profile Live Telemetry \u0026 Dynamic SVG Suite",
+                      "title":  "Generate Custom GitHub Streak \u0026 Achievements Trophy SVG Cards Locally (Midnight Galaxy Theme - Python)",
+                      "filename":  "github_custom_svg_cards_generator.py",
+                      "url":  "https://gist.github.com/1stANUNNAKI/6bf795c7841b69a11dc2eb97f0aaefbe"
+                  },
+                  {
+                      "id":  "03",
+                      "collection":  "List 01: GitHub Profile Live Telemetry \u0026 Dynamic SVG Suite",
+                      "title":  "GitHub Actions Workflow: Auto-Update Profile README Stats \u0026 SVG Cards Every Hour (Cron Schedule)",
+                      "filename":  "github_profile_hourly_sync_workflow.yml",
+                      "url":  "https://gist.github.com/1stANUNNAKI/d7f8a4a289e50e71bb24be84397a53da"
+                  },
+                  {
+                      "id":  "04",
+                      "collection":  "List 01: GitHub Profile Live Telemetry \u0026 Dynamic SVG Suite",
+                      "title":  "GitHub Actions Workflow: Generate Dark \u0026 Light Contribution Grid Snake Animation SVG (Platane/snk)",
+                      "filename":  "github_contribution_snake_grid_workflow.yml",
+                      "url":  "https://gist.github.com/1stANUNNAKI/c2de940528a5bb678e534529746694b0"
+                  },
+                  {
+                      "id":  "05",
+                      "collection":  "List 02: GitHub Pull Request \u0026 Achievements Automation Suite",
+                      "title":  "Create GPG-Verified Commits \u0026 Merge Pull Requests via GitHub GraphQL API (createCommitOnBranch Python)",
+                      "filename":  "github_graphql_gpg_verified_pr_automator.py",
+                      "url":  "https://gist.github.com/1stANUNNAKI/62f2233c827774d1c1ca9b948d09ee8b"
+                  },
+                  {
+                      "id":  "06",
+                      "collection":  "List 02: GitHub Pull Request \u0026 Achievements Automation Suite",
+                      "title":  "GitHub REST \u0026 GraphQL API Adaptive Rate-Limit Controller with Exponential Backoff (Python)",
+                      "filename":  "github_adaptive_api_rate_limiter.py",
+                      "url":  "https://gist.github.com/1stANUNNAKI/a0e2150fc82fdf18d772769450a4d257"
+                  },
+                  {
+                      "id":  "07",
+                      "collection":  "List 02: GitHub Pull Request \u0026 Achievements Automation Suite",
+                      "title":  "Automate GitHub Discussions Q\u0026A Creation and Mark Accepted Answers via GraphQL API (Python)",
+                      "filename":  "github_discussions_qna_automator.py",
+                      "url":  "https://gist.github.com/1stANUNNAKI/d08890ebf4c009c6693519da37b2ae1f"
+                  },
+                  {
+                      "id":  "08",
+                      "collection":  "List 03: Open-Source Community Repo Scanner \u0026 Secret Guard Suite",
+                      "title":  "GitHub Open-Source Repository Scanner: Find \u0026 Fix Typos, Deprecated Actions \u0026 Docs via Automated PRs (Python)",
+                      "filename":  "github_open_source_repo_scanner.py",
+                      "url":  "https://gist.github.com/1stANUNNAKI/254d6ff362da7fb7ec17ae5b0adaa3b7"
+                  },
+                  {
+                      "id":  "09",
+                      "collection":  "List 03: Open-Source Community Repo Scanner \u0026 Secret Guard Suite",
+                      "title":  "Pre-Commit Secret Scanner \u0026 Token Sanitizer for GitHub Repositories and Gists (Python Zero-Dependency)",
+                      "filename":  "github_pre_commit_secret_sanitizer.py",
+                      "url":  "https://gist.github.com/1stANUNNAKI/058fec7fe849cdea5c050eeba2b16204"
+                  },
+                  {
+                      "id":  "10",
+                      "collection":  "List 03: Open-Source Community Repo Scanner \u0026 Secret Guard Suite",
+                      "title":  "Fix GitHub Actions Release \u0026 npm/OVSX/VSCode Marketplace Duplicate Version Republish Failures (YAML Pattern)",
+                      "filename":  "github_actions_binary_republish_guard.yml",
+                      "url":  "https://gist.github.com/1stANUNNAKI/49cfbfd99f3cf0a15e9a90e2bad2482e"
+                  }
+              ]
+}

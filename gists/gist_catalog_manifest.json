@@ -6,7 +6,8 @@
     "seo_title": "GitHub Profile README Live Stats, Streak & Contribution Counter Auto-Sync (Python GraphQL & REST)",
     "filename": "github_profile_live_metrics_sync.py",
     "guide_filename": "00_01_profile_live_metrics_sync_GUIDE_AR.md",
-    "purpose_ar": "مزامنة إحصائيات بروفايل GitHub الحية (إجمالي المساهمات الفعلية عبر GraphQL، أطول سلسلة أيام متتالية Streak، النجوم، المستودعات العامة، والمتابعين) وتحديث ملف README.md تلقائياً بدون أي مكتبات خارجية."
+    "purpose_ar": "مزامنة إحصائيات بروفايل GitHub الحية (إجمالي المساهمات الفعلية عبر GraphQL، أطول سلسلة أيام متتالية Streak، النجوم، المستودعات العامة، والمتابعين) وتحديث ملف README.md تلقائياً بدون أي مكتبات خارجية.",
+    "en_guide_filename": "00_01_profile_live_metrics_sync_README.md"
   },
   {
     "id": "02",
@@ -15,7 +16,8 @@
     "seo_title": "Generate Custom GitHub Streak & Achievements Trophy SVG Cards Locally (Midnight Galaxy Theme - Python)",
     "filename": "github_custom_svg_cards_generator.py",
     "guide_filename": "00_02_custom_svg_cards_generator_GUIDE_AR.md",
-    "purpose_ar": "توليد بطاقات SVG الإحصائية (`streak-stats.svg` و `trophies.svg`) محلياً داخل المستودع بألوان ثيم `Midnight Galaxy` الموحدة دون الاعتماد على خوادم الطرف الثالث البطيئة أو المتوقفة."
+    "purpose_ar": "توليد بطاقات SVG الإحصائية (`streak-stats.svg` و `trophies.svg`) محلياً داخل المستودع بألوان ثيم `Midnight Galaxy` الموحدة دون الاعتماد على خوادم الطرف الثالث البطيئة أو المتوقفة.",
+    "en_guide_filename": "00_02_custom_svg_cards_generator_README.md"
   },
   {
     "id": "03",
@@ -24,7 +26,8 @@
     "seo_title": "GitHub Actions Workflow: Auto-Update Profile README Stats & SVG Cards Every Hour (Cron Schedule)",
     "filename": "github_profile_hourly_sync_workflow.yml",
     "guide_filename": "00_03_profile_hourly_sync_workflow_GUIDE_AR.md",
-    "purpose_ar": "ملف أتمتة GitHub Actions جاهز يعمل تلقائياً على مدار الساعة (`0 * * * *`) لتشغيل سكربت المزامنة وتوليد البطاقات ورفع التحديثات إلى المستودع دون أي تدخل يدوي."
+    "purpose_ar": "ملف أتمتة GitHub Actions جاهز يعمل تلقائياً على مدار الساعة (`0 * * * *`) لتشغيل سكربت المزامنة وتوليد البطاقات ورفع التحديثات إلى المستودع دون أي تدخل يدوي.",
+    "en_guide_filename": "00_03_profile_hourly_sync_workflow_README.md"
   },
   {
     "id": "04",
@@ -33,7 +36,8 @@
     "seo_title": "GitHub Actions Workflow: Generate Dark & Light Contribution Grid Snake Animation SVG (Platane/snk)",
     "filename": "github_contribution_snake_grid_workflow.yml",
     "guide_filename": "00_04_contribution_snake_grid_workflow_GUIDE_AR.md",
-    "purpose_ar": "توليد رسم الثعبان المتحرك على شبكة المساهمات الخضراء (Contribution Grid Snake) للوضعين الليلي والنهاري تلقائياً كل 6 ساعات ونشره في فرع `output`."
+    "purpose_ar": "توليد رسم الثعبان المتحرك على شبكة المساهمات الخضراء (Contribution Grid Snake) للوضعين الليلي والنهاري تلقائياً كل 6 ساعات ونشره في فرع `output`.",
+    "en_guide_filename": "00_04_contribution_snake_grid_workflow_README.md"
   },
   {
     "id": "05",
@@ -42,7 +46,8 @@
     "seo_title": "Create GPG-Verified Commits & Merge Pull Requests via GitHub GraphQL API (createCommitOnBranch Python)",
     "filename": "github_graphql_gpg_verified_pr_automator.py",
     "guide_filename": "00_05_graphql_gpg_verified_pr_automator_GUIDE_AR.md",
-    "purpose_ar": "إنشاء التزامات موقّعة رسمياً بتوقيع GitHub GPG (`Verified` / `signature.isValid = true`) مع دعم تذييل المؤلف المشارك (`Co-authored-by:`) وفتح ودمج طلبات السحب عبر GraphQL API."
+    "purpose_ar": "إنشاء التزامات موقّعة رسمياً بتوقيع GitHub GPG (`Verified` / `signature.isValid = true`) مع دعم تذييل المؤلف المشارك (`Co-authored-by:`) وفتح ودمج طلبات السحب عبر GraphQL API.",
+    "en_guide_filename": "00_05_graphql_gpg_verified_pr_automator_README.md"
   },
   {
     "id": "06",
@@ -51,7 +56,8 @@
     "seo_title": "GitHub REST & GraphQL API Adaptive Rate-Limit Controller with Exponential Backoff (Python)",
     "filename": "github_adaptive_api_rate_limiter.py",
     "guide_filename": "00_06_adaptive_api_rate_limiter_GUIDE_AR.md",
-    "purpose_ar": "حماية سكربتات الأتمتة من تجاوز حدود طلبات GitHub API (`Primary & Secondary Rate Limits`) عبر قراءة ترويسات الاستجابة وإدارة التوقف الذكي التلقائي."
+    "purpose_ar": "حماية سكربتات الأتمتة من تجاوز حدود طلبات GitHub API (`Primary & Secondary Rate Limits`) عبر قراءة ترويسات الاستجابة وإدارة التوقف الذكي التلقائي.",
+    "en_guide_filename": "00_06_adaptive_api_rate_limiter_README.md"
   },
   {
     "id": "07",
@@ -60,7 +66,8 @@
     "seo_title": "Automate GitHub Discussions Q&A Creation and Mark Accepted Answers via GraphQL API (Python)",
     "filename": "github_discussions_qna_automator.py",
     "guide_filename": "00_07_discussions_qna_automator_GUIDE_AR.md",
-    "purpose_ar": "أتمتة بناء قاعدة المعرفة والأسئلة الشائعة (Q&A Discussions) في مستودعات GitHub واعتماد الإجابات الصحيحة عبر GraphQL API (المسار التقني الخاص بوسام Galaxy Brain)."
+    "purpose_ar": "أتمتة بناء قاعدة المعرفة والأسئلة الشائعة (Q&A Discussions) في مستودعات GitHub واعتماد الإجابات الصحيحة عبر GraphQL API (المسار التقني الخاص بوسام Galaxy Brain).",
+    "en_guide_filename": "00_07_discussions_qna_automator_README.md"
   },
   {
     "id": "08",
@@ -69,7 +76,8 @@
     "seo_title": "GitHub Open-Source Repository Scanner: Find & Fix Typos, Deprecated Actions & Docs via Automated PRs (Python)",
     "filename": "github_open_source_repo_scanner.py",
     "guide_filename": "00_08_open_source_repo_scanner_GUIDE_AR.md",
-    "purpose_ar": "فحص المستودعات العامة على GitHub حسب نطاق النجوم وعدد متابعي المالك، واكتشاف فرص التحسين الحقيقية (إصلاح الأخطاء الإملائية، ترقية GitHub Actions القديمة، وتحسين تنسيق Markdown) وتوليد تقارير مشاركة مجتمعية بالعربية."
+    "purpose_ar": "فحص المستودعات العامة على GitHub حسب نطاق النجوم وعدد متابعي المالك، واكتشاف فرص التحسين الحقيقية (إصلاح الأخطاء الإملائية، ترقية GitHub Actions القديمة، وتحسين تنسيق Markdown) وتوليد تقارير مشاركة مجتمعية بالعربية.",
+    "en_guide_filename": "00_08_open_source_repo_scanner_README.md"
   },
   {
     "id": "09",
@@ -78,7 +86,8 @@
     "seo_title": "Pre-Commit Secret Scanner & Token Sanitizer for GitHub Repositories and Gists (Python Zero-Dependency)",
     "filename": "github_pre_commit_secret_sanitizer.py",
     "guide_filename": "00_09_pre_commit_secret_sanitizer_GUIDE_AR.md",
-    "purpose_ar": "فحص وتطهير الأكواد والملفات قبل رفعها إلى GitHub أو نشرها كـ Gist، واكتشاف أي مفاتيح سرية (`ghp_`, `github_pat_`, `sk-`, `AKIA`) أو إيميلات شخصية واستبدالها تلقائياً بعناصر نائبة آمنة."
+    "purpose_ar": "فحص وتطهير الأكواد والملفات قبل رفعها إلى GitHub أو نشرها كـ Gist، واكتشاف أي مفاتيح سرية (`ghp_`, `github_pat_`, `sk-`, `AKIA`) أو إيميلات شخصية واستبدالها تلقائياً بعناصر نائبة آمنة.",
+    "en_guide_filename": "00_09_pre_commit_secret_sanitizer_README.md"
   },
   {
     "id": "10",
@@ -87,6 +96,7 @@
     "seo_title": "Fix GitHub Actions Release & npm/OVSX/VSCode Marketplace Duplicate Version Republish Failures (YAML Pattern)",
     "filename": "github_actions_binary_republish_guard.yml",
     "guide_filename": "00_10_actions_binary_republish_guard_GUIDE_AR.md",
-    "purpose_ar": "قالب GitHub Actions هندسي جاهز لحل مشكلة فشل عمليات الـ Deploy والـ Release عند إعادة تشغيل المهام (Re-run Failed Jobs) بسبب وجود الإصدار مسبقاً على npm أو VS Code Marketplace أو OpenVSX أو فشل تحميل FFmpeg."
+    "purpose_ar": "قالب GitHub Actions هندسي جاهز لحل مشكلة فشل عمليات الـ Deploy والـ Release عند إعادة تشغيل المهام (Re-run Failed Jobs) بسبب وجود الإصدار مسبقاً على npm أو VS Code Marketplace أو OpenVSX أو فشل تحميل FFmpeg.",
+    "en_guide_filename": "00_10_actions_binary_republish_guard_README.md"
   }
 ]
