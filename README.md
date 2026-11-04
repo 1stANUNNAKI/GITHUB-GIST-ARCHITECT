@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="docs/assets/homepage-preview.png" alt="GITHUB-GIST-ARCHITECT — Home Page Preview" width="100%" />
+</p>
+
 # 🏛️ GITHUB-GIST-ARCHITECT
 
 <div align="center">
