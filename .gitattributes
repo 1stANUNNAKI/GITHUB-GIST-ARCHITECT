@@ -1,0 +1,8 @@
+# Ensure GitHub Linguist detects and counts all programming languages used in the project
+*.py linguist-detectable=true linguist-language=Python
+*.ps1 linguist-detectable=true linguist-language=PowerShell
+*.sh linguist-detectable=true linguist-language=Shell
+*.yml linguist-detectable=true linguist-language=YAML
+*.yaml linguist-detectable=true linguist-language=YAML
+*.md linguist-documentation=true
+*.json linguist-Language=JSON
